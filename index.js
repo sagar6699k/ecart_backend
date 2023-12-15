@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import connect from "./src/dbConfig/db.js";
 import { userRouter } from "./src/routes/user.route.js";
 import { productRouter } from "./src/routes/product.route.js";
@@ -6,7 +7,14 @@ import { productRouter } from "./src/routes/product.route.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+var corsOptions = {
+    origin: "http://localhost:3000"
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
+
 //routes
 app.get("/", (req, res) => {
     res.send("Welcome to Express App");
