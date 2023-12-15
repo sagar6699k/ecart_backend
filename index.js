@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 app.use("/", userRouter)
 
 
-app.listen(PORT, async () => {
+app.listen(PORT, "0.0.0.0", async () => {
     connect()
     console.log(`Listening on the port:${PORT}`);
 })
