@@ -8,7 +8,8 @@ import { productRouter } from "./src/routes/product.route.js";
 const app = express();
 const PORT = process.env.PORT || 4000;
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: ["http://localhost:3000", "https://ecart-frontend.vercel.app"],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
 
 app.use(cors(corsOptions));
